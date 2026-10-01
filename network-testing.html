@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Testing — Sfinex</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span class="logo-text">Sfinex</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="penetration-testing.html" data-en="Penetration Testing" data-ar="اختبار الاختراق">Penetration Testing</a>
+        <a href="encryption.html" data-en="Encryption" data-ar="التشفير">Encryption</a>
+        <a href="password-security.html" data-en="Password Security" data-ar="أمان كلمات المرور">Password Security</a>
+        <a href="network-testing.html" class="active" data-en="Network Testing" data-ar="اختبار الشبكة">Network Testing</a>
+      </nav>
+      <button id="lang-toggle" class="lang-btn" aria-label="Switch language">
+        <span id="lang-label">عربي</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-badge" data-en="Service" data-ar="خدمة">Service</p>
+      <h1 data-en="Network Testing" data-ar="اختبار الشبكة">Network Testing</h1>
+      <p class="page-sub" data-en="Assessment of network configuration, exposure points, and segmentation to help reduce attack surface." data-ar="تقييم إعدادات الشبكة ونقاط التعرض والتقسيم للمساعدة في تقليل سطح الهجوم.">
+        Assessment of network configuration, exposure points, and segmentation to help reduce attack surface.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-width">
+      <div class="content-block glass">
+        <h2 data-en="What we look at" data-ar="ما الذي ننظر إليه">What we look at</h2>
+        <ul class="feature-list">
+          <li data-en="Open ports and unnecessary services" data-ar="المنافذ المفتوحة والخدمات غير الضرورية"></li>
+          <li data-en="Network segmentation and isolation" data-ar="تقسيم الشبكة والعزل"></li>
+          <li data-en="Exposed management interfaces" data-ar="واجهات الإدارة المعرضة"></li>
+          <li data-en="Basic misconfigurations that increase risk" data-ar="أخطاء الإعداد الأساسية التي تزيد المخاطر"></li>
+        </ul>
+      </div>
+
+      <!-- Simulated Network Check -->
+      <div class="content-block glass">
+        <h2 data-en="Simulated Network Visibility Check" data-ar="فحص رؤية الشبكة التجريبي">Simulated Network Visibility Check</h2>
+        <p class="tool-desc" data-en="Visual demo only. No actual network packets are sent. Results are randomly generated for illustration." data-ar="عرض مرئي فقط. لا يتم إرسال أي حزم شبكة حقيقية. النتائج تُولَّد عشوائيًا للتوضيح.">
+          Visual demo only. No actual network packets are sent. Results are randomly generated for illustration.
+        </p>
+
+        <div class="sim-controls">
+          <input type="text" id="net-target" placeholder="192.168.0.0/24 or hostname" data-en-placeholder="192.168.0.0/24 or hostname" data-ar-placeholder="192.168.0.0/24 أو اسم مضيف">
+          <button id="btn-sim-network" class="btn btn-primary" data-en="Run Simulated Check" data-ar="تشغيل الفحص التجريبي">Run Simulated Check</button>
+        </div>
+
+        <div id="net-progress-wrap" class="sim-progress-wrap" hidden>
+          <div class="sim-progress-bar"><div id="net-progress-fill" class="sim-progress-fill"></div></div>
+          <p id="net-status" class="sim-status">Preparing...</p>
+        </div>
+
+        <div id="net-results" class="sim-results" hidden>
+          <h3 data-en="Simulated Host Summary" data-ar="ملخص المضيفين التجريبي">Simulated Host Summary</h3>
+          <div class="net-table-wrap">
+            <table class="net-table">
+              <thead>
+                <tr>
+                  <th data-en="Host" data-ar="المضيف">Host</th>
+                  <th data-en="Status" data-ar="الحالة">Status</th>
+                  <th data-en="Open Ports (sim)" data-ar="منافذ مفتوحة (تجريبي)">Open Ports (sim)</th>
+                </tr>
+              </thead>
+              <tbody id="net-table-body"></tbody>
+            </table>
+          </div>
+          <p class="sim-disclaimer" data-en="All data above is fictional and created only for demonstration." data-ar="جميع البيانات أعلاه وهمية ومُنشأة للعرض فقط.">
+            All data above is fictional and created only for demonstration.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-block glass">
+        <h2 data-en="Limitation of browser tools" data-ar="حدود أدوات المتصفح">Limitation of browser tools</h2>
+        <p data-en="Real network scanning cannot be performed from a web browser due to security restrictions. Professional testing requires dedicated tools and proper authorization." data-ar="لا يمكن إجراء فحص الشبكة الحقيقي من متصفح الويب بسبب قيود الأمان. يتطلب الاختبار الاحترافي أدوات مخصصة وتفويضًا مناسبًا.">
+          Real network scanning cannot be performed from a web browser due to security restrictions. Professional testing requires dedicated tools and proper authorization.
+        </p>
+      </div>
+
+      <div class="page-actions">
+        <a href="index.html#contact" class="btn btn-primary" data-en="Contact us" data-ar="تواصل معنا">Contact us</a>
+        <a href="index.html" class="btn btn-secondary" data-en="Back to Home" data-ar="العودة للرئيسية">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark small">S</span>
+        <span>Sfinex</span>
+      </div>
+      <p class="footer-copy">
+        <span data-en="© 2025 Sfinex. Built for clarity and security awareness." data-ar="© 2025 Sfinex. بُني من أجل الوضوح والوعي الأمني.">
+          © 2025 Sfinex. Built for clarity and security awareness.
+        </span>
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

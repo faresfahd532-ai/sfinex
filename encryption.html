@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encryption — Sfinex</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span class="logo-text">Sfinex</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="penetration-testing.html" data-en="Penetration Testing" data-ar="اختبار الاختراق">Penetration Testing</a>
+        <a href="encryption.html" class="active" data-en="Encryption" data-ar="التشفير">Encryption</a>
+        <a href="password-security.html" data-en="Password Security" data-ar="أمان كلمات المرور">Password Security</a>
+        <a href="network-testing.html" data-en="Network Testing" data-ar="اختبار الشبكة">Network Testing</a>
+      </nav>
+      <button id="lang-toggle" class="lang-btn" aria-label="Switch language">
+        <span id="lang-label">عربي</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-badge" data-en="Service" data-ar="خدمة">Service</p>
+      <h1 data-en="Encryption Guidance" data-ar="إرشادات التشفير">Encryption Guidance</h1>
+      <p class="page-sub" data-en="Practical advice on protecting data at rest and in transit, plus a working client-side AES demo." data-ar="نصائح عملية لحماية البيانات الثابتة والمنقولة، مع عرض AES يعمل في المتصفح.">
+        Practical advice on protecting data at rest and in transit, plus a working client-side AES demo.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-width">
+      <div class="content-block glass">
+        <h2 data-en="Key principles" data-ar="مبادئ أساسية">Key principles</h2>
+        <ul class="feature-list">
+          <li data-en="Use strong, modern algorithms (AES-256, ChaCha20, etc.)" data-ar="استخدم خوارزميات قوية وحديثة (مثل AES-256)"></li>
+          <li data-en="Protect encryption keys as carefully as the data itself" data-ar="احمِ مفاتيح التشفير بعناية مثل البيانات نفسها"></li>
+          <li data-en="Prefer authenticated encryption (AES-GCM) when possible" data-ar="فضّل التشفير المصادق عليه (AES-GCM) عند الإمكان"></li>
+          <li data-en="Never hard-code keys in client-side code for real systems" data-ar="لا تضع المفاتيح داخل كود الواجهة الأمامية في الأنظمة الحقيقية"></li>
+        </ul>
+      </div>
+
+      <div class="content-block glass">
+        <h2 data-en="Live Demo — AES-256-GCM" data-ar="عرض مباشر — AES-256-GCM">Live Demo — AES-256-GCM</h2>
+        <p class="tool-desc" data-en="Everything runs in your browser via the Web Crypto API. Nothing is sent to any server. Use the same passphrase to decrypt." data-ar="كل شيء يعمل في متصفحك عبر Web Crypto API. لا يُرسل أي شيء لأي خادم. استخدم نفس عبارة المرور لفك التشفير.">
+          Everything runs in your browser via the Web Crypto API. Nothing is sent to any server. Use the same passphrase to decrypt.
+        </p>
+
+        <div class="tool-form">
+          <label data-en="1. Text to encrypt" data-ar="1. النص المراد تشفيره">1. Text to encrypt</label>
+          <textarea id="plain-text" rows="3" placeholder="Enter text here..."></textarea>
+
+          <label data-en="2. Passphrase (keep it secret)" data-ar="2. عبارة المرور (احتفظ بها سرًا)">2. Passphrase (keep it secret)</label>
+          <input type="password" id="enc-pass" placeholder="Choose a passphrase">
+
+          <div class="tool-buttons">
+            <button id="btn-encrypt" class="btn btn-primary" data-en="Encrypt" data-ar="تشفير">Encrypt</button>
+            <button id="btn-decrypt" class="btn btn-secondary" data-en="Decrypt" data-ar="فك التشفير">Decrypt</button>
+            <button id="btn-clear" class="btn btn-secondary" data-en="Clear" data-ar="مسح">Clear</button>
+          </div>
+
+          <label data-en="3. Result (ciphertext or decrypted text)" data-ar="3. النتيجة (نص مشفر أو نص مفكوك)">3. Result (ciphertext or decrypted text)</label>
+          <textarea id="enc-result" rows="5" placeholder="Output will appear here..."></textarea>
+          <button id="btn-copy" class="btn btn-secondary btn-small" data-en="Copy result" data-ar="نسخ النتيجة">Copy result</button>
+        </div>
+      </div>
+
+      <div class="page-actions">
+        <a href="index.html#contact" class="btn btn-primary" data-en="Contact us" data-ar="تواصل معنا">Contact us</a>
+        <a href="index.html" class="btn btn-secondary" data-en="Back to Home" data-ar="العودة للرئيسية">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark small">S</span>
+        <span>Sfinex</span>
+      </div>
+      <p class="footer-copy">
+        <span data-en="© 2025 Sfinex. Built for clarity and security awareness." data-ar="© 2025 Sfinex. بُني من أجل الوضوح والوعي الأمني.">
+          © 2025 Sfinex. Built for clarity and security awareness.
+        </span>
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

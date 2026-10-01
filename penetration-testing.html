@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penetration Testing — Sfinex</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">S</span>
+        <span class="logo-text">Sfinex</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="penetration-testing.html" class="active" data-en="Penetration Testing" data-ar="اختبار الاختراق">Penetration Testing</a>
+        <a href="encryption.html" data-en="Encryption" data-ar="التشفير">Encryption</a>
+        <a href="password-security.html" data-en="Password Security" data-ar="أمان كلمات المرور">Password Security</a>
+        <a href="network-testing.html" data-en="Network Testing" data-ar="اختبار الشبكة">Network Testing</a>
+      </nav>
+      <button id="lang-toggle" class="lang-btn" aria-label="Switch language">
+        <span id="lang-label">عربي</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-badge" data-en="Service" data-ar="خدمة">Service</p>
+      <h1 data-en="Penetration Testing" data-ar="اختبار الاختراق">Penetration Testing</h1>
+      <p class="page-sub" data-en="Structured evaluation of systems and applications to identify weaknesses before they can be exploited." data-ar="تقييم منظم للأنظمة والتطبيقات لتحديد نقاط الضعف قبل أن يتم استغلالها.">
+        Structured evaluation of systems and applications to identify weaknesses before they can be exploited.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-width">
+      <div class="content-block glass">
+        <h2 data-en="What it covers" data-ar="ماذا يغطي">What it covers</h2>
+        <ul class="feature-list">
+          <li data-en="Web application assessment (common vulnerability classes)" data-ar="تقييم تطبيقات الويب (فئات الثغرات الشائعة)"></li>
+          <li data-en="External and internal exposure review" data-ar="مراجعة التعرض الخارجي والداخلي"></li>
+          <li data-en="Configuration and access control checks" data-ar="فحص الإعدادات والتحكم في الوصول"></li>
+          <li data-en="Clear prioritised findings and remediation guidance" data-ar="نتائج مرتبة حسب الأولوية مع إرشادات للإصلاح"></li>
+        </ul>
+      </div>
+
+      <!-- Simulated Assessment -->
+      <div class="content-block glass">
+        <h2 data-en="Simulated Assessment Demo" data-ar="عرض محاكاة التقييم">Simulated Assessment Demo</h2>
+        <p class="tool-desc" data-en="This is a visual demonstration only. No real scanning is performed. For illustration of how a report might look." data-ar="هذا عرض مرئي فقط. لا يتم إجراء أي فحص حقيقي. للتوضيح كيف قد يبدو التقرير.">
+          This is a visual demonstration only. No real scanning is performed. For illustration of how a report might look.
+        </p>
+
+        <div class="sim-controls">
+          <input type="text" id="sim-target" placeholder="example.com or 192.168.1.1" data-en-placeholder="example.com or 192.168.1.1" data-ar-placeholder="example.com أو 192.168.1.1">
+          <button id="btn-sim-pentest" class="btn btn-primary" data-en="Start Simulated Scan" data-ar="بدء الفحص التجريبي">Start Simulated Scan</button>
+        </div>
+
+        <div id="sim-progress-wrap" class="sim-progress-wrap" hidden>
+          <div class="sim-progress-bar"><div id="sim-progress-fill" class="sim-progress-fill"></div></div>
+          <p id="sim-status" class="sim-status">Initializing...</p>
+        </div>
+
+        <div id="sim-results" class="sim-results" hidden>
+          <h3 data-en="Sample Findings" data-ar="نتائج تجريبية">Sample Findings</h3>
+          <div class="finding high">
+            <span class="sev" data-en="High" data-ar="عالي">High</span>
+            <div>
+              <strong data-en="Outdated software component detected" data-ar="تم اكتشاف مكون برمجي قديم">Outdated software component detected</strong>
+              <p data-en="A known vulnerable library version was identified in the response headers simulation." data-ar="تم تحديد إصدار مكتبة معروف بثغرات في محاكاة رؤوس الاستجابة."></p>
+            </div>
+          </div>
+          <div class="finding medium">
+            <span class="sev" data-en="Medium" data-ar="متوسط">Medium</span>
+            <div>
+              <strong data-en="Missing security headers" data-ar="رؤوس أمان مفقودة">Missing security headers</strong>
+              <p data-en="Simulated check shows absence of recommended security headers (CSP, HSTS)." data-ar="الفحص التجريبي يُظهر غياب رؤوس الأمان الموصى بها (CSP, HSTS)."</p>
+            </div>
+          </div>
+          <div class="finding low">
+            <span class="sev" data-en="Low" data-ar="منخفض">Low</span>
+            <div>
+              <strong data-en="Information disclosure in error pages" data-ar="كشف معلومات في صفحات الأخطاء">Information disclosure in error pages</strong>
+              <p data-en="Generic error handling could reveal stack traces in certain conditions." data-ar="معالجة الأخطاء العامة قد تكشف تفاصيل تقنية في بعض الحالات."</p>
+            </div>
+          </div>
+          <p class="sim-disclaimer" data-en="These findings are completely fictional and generated for demo purposes only." data-ar="هذه النتائج وهمية بالكامل ومُولَّدة لأغراض العرض فقط.">
+            These findings are completely fictional and generated for demo purposes only.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-block glass">
+        <h2 data-en="Important note" data-ar="ملاحظة مهمة">Important note</h2>
+        <p data-en="Penetration testing should only be performed on systems you own or have explicit written permission to test. Unauthorized testing is illegal." data-ar="يجب إجراء اختبار الاختراق فقط على الأنظمة التي تملكها أو لديك إذن كتابي صريح لاختبارها. الاختبار غير المصرح به غير قانوني.">
+          Penetration testing should only be performed on systems you own or have explicit written permission to test. Unauthorized testing is illegal.
+        </p>
+      </div>
+
+      <div class="page-actions">
+        <a href="index.html#contact" class="btn btn-primary" data-en="Contact us" data-ar="تواصل معنا">Contact us</a>
+        <a href="index.html" class="btn btn-secondary" data-en="Back to Home" data-ar="العودة للرئيسية">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark small">S</span>
+        <span>Sfinex</span>
+      </div>
+      <p class="footer-copy">
+        <span data-en="© 2025 Sfinex. Built for clarity and security awareness." data-ar="© 2025 Sfinex. بُني من أجل الوضوح والوعي الأمني.">
+          © 2025 Sfinex. Built for clarity and security awareness.
+        </span>
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
